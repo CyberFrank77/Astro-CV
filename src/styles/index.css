@@ -1,0 +1,94 @@
+
+ .line {
+    background: linear-gradient(180deg, #0d1117 0%, #0a0c10 100%);
+    border-bottom: 1px solid #30363d;
+  }
+
+
+  .my-name {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .my-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #b0b8c5;
+    margin-bottom: 1rem;
+  }
+
+  .my-meta {
+    display: flex;
+    color: #848d97;
+    font-size: 1rem;
+  }
+
+
+  .contact {
+
+  }
+
+
+  .contact-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-links a {
+    color: #b0b8c5;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+    position: relative;
+
+  }
+
+  .contact-links a:hover {
+    color: #ffffff;
+  }
+
+  .contact-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3fb950;
+    transition: width 0.5s;
+  }
+
+  .contact-links a:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .my-name {
+      font-size: 2.5rem;
+    }
+
+    .my-title {
+      font-size: 1.25rem;
+    }
+
+    .my-meta {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+
+  @media (max-width: 480px) {
+
+
+    .my-name {
+      font-size: 2rem;
+    }
+
+    .contact-links {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+}

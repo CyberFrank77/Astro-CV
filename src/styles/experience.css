@@ -1,6 +1,4 @@
-   /* Experience CSS */
-
- * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -70,6 +68,14 @@
     padding: 1.8rem 1.8rem 2rem;
     margin-bottom: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 600ms ease;
+    translate: -30%;
+  }
+
+  .experience-card.show {
+    opacity: 1;
+    translate: 0;
   }
 
   .exp-header {

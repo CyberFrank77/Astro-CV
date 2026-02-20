@@ -2,6 +2,8 @@
 import "../scripts/app.js";
 import Layout from "../layouts/Layout.astro";
 import Experience from "../components/Experience.astro";
+import Navbar from '../components/Navbar.astro';
+import Education from "../components/Education.astro";
 
 const myData = {
   name: "CyberFrank77 CV",
@@ -11,8 +13,9 @@ const myData = {
 
 
 ---
-
+ 
 <Layout title="CyberFrank CV">
+ 
 	<section class="contact">
       <div class="container">
         <div class="contact-links">
@@ -22,6 +25,7 @@ const myData = {
         </div>
       </div>
     </section>
+      
   <main class="main-content">
     <section class="hero">
       <div class="container">
@@ -35,12 +39,12 @@ const myData = {
         </div>
       </div>
     </section>
-
-   
+     
     <Experience />
 
     
   </main>
+ 
 </Layout>
 
 <style>

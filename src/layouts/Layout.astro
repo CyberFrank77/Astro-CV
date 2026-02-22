@@ -1,5 +1,7 @@
 ---
 import "../scripts/app.js";
+import { initNavbar } from '../scripts/navbar.js';
+
 export interface Props {
   title: string;
   description?: string;
@@ -25,6 +27,11 @@ const { title, description = "Full Stack Developer Portfolio" } = Astro.props;
   <body>
     <slot />
   </body>
+  
+  <script>
+    import { initNavbar } from '../scripts/navbar.js';
+    initNavbar();
+  </script>
 </html>
 
 <style is:global>

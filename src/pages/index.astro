@@ -17,8 +17,9 @@ const aboutText =
 ---
  
 <Layout title="CyberFrank CV">
+  <Navbar />
  
-	<section class="contact">
+	<section class="contact" id="contact">
       <div class="container">
         <div class="contact-links">
           <a href="https://github.com/CyberFrank77" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -46,8 +47,12 @@ const aboutText =
     <div class="about-block">
       <p class="about-text">{aboutText}</p>
     </div>
-     <Education />
-    <Experience />
+    <section id="education">
+      <Education />
+    </section>
+    <section id="experience">
+      <Experience />
+    </section>
 
     
   </main>

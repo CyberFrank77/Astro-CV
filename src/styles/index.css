@@ -1,38 +1,69 @@
+ .main-content {
+    background-color: #0a0c10;
+    min-height: 100vh;
+  }
 
- .line {
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .hero {
+    padding: 0rem 0 2rem;
     background: linear-gradient(180deg, #0d1117 0%, #0a0c10 100%);
     border-bottom: 1px solid #30363d;
   }
 
+  .hero-content {
+    text-align: left;
+  }
 
-  .my-name {
+  .hero-name {
     font-size: 3rem;
     font-weight: 700;
     color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
   }
 
-  .my-title {
+  .hero-title {
     font-size: 1.5rem;
     font-weight: 400;
     color: #b0b8c5;
     margin-bottom: 1rem;
   }
 
-  .my-meta {
+  .hero-meta {
     display: flex;
+    gap: 2rem;
     color: #848d97;
     font-size: 1rem;
   }
 
-
-  .contact {
-
+  .hero-location,
+  .hero-availability {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
+  .contact {
+    padding: 1rem 0;
+    background-color: #0d1117;
+    border-top: 1px solid #30363d;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 2rem;
+  }
 
   .contact-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
   }
 
@@ -57,7 +88,7 @@
     width: 0;
     height: 2px;
     background-color: #3fb950;
-    transition: width 0.5s;
+    transition: width 0.2s;
   }
 
   .contact-links a:hover::after {
@@ -65,24 +96,30 @@
   }
 
   @media (max-width: 768px) {
-    .my-name {
+    .hero-name {
       font-size: 2.5rem;
     }
 
-    .my-title {
+    .hero-title {
       font-size: 1.25rem;
     }
 
-    .my-meta {
+    .hero-meta {
       flex-direction: column;
       gap: 0.5rem;
     }
 
+    .container {
+      padding: 0 1rem;
+    }
+  }
 
   @media (max-width: 480px) {
+    .hero {
+      padding: 2rem 0;
+    }
 
-
-    .my-name {
+    .hero-name {
       font-size: 2rem;
     }
 
@@ -91,4 +128,3 @@
       gap: 1rem;
     }
   }
-}

@@ -12,7 +12,8 @@ const myData = {
   location: "Madrid - Spain",
 };
 
-
+const aboutText =
+  "Especializándome en Full Stack y con experiencia en diseño y producción audiovisual me enfrento ahora a un nuevo reto, entender los misterios de Javascript y convertirme en desarrollador web. Gotta Catch 'Em All! ";
 ---
  
 <Layout title="CyberFrank CV">
@@ -26,7 +27,7 @@ const myData = {
         </div>
       </div>
     </section>
-      
+       
   <main class="main-content">
     <section class="hero">
       <div class="container">
@@ -36,11 +37,16 @@ const myData = {
 		  
           <div class="hero-meta">
             <span class="hero-location">📍 {myData.location}</span>
-          </div>
+            
         </div>
       </div>
+      
     </section>
-     
+    <div class="container">
+    <div class="about-block">
+      <p class="about-text">{aboutText}</p>
+    </div>
+     <Education />
     <Experience />
 
     

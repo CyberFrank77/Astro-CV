@@ -1,33 +1,34 @@
 // src/scripts/navbar.js
 export function initNavbar() {
   const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('.section');
-  const navbar = document.querySelector('.navbar');
+  const sections = document.querySelectorAll('[id="education"], [id="experience"], [id="contact"]');
 
-  function smoothScroll(target) {
-    const element = document.querySelector(target);
-    if (element) {
-      const offsetTop = element.offsetTop - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  }
-
+  // Smooth scroll when clicking nav links
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
-      smoothScroll(targetId);
       
-      navLinks.forEach(navLink => navLink.classList.remove('active'));
-      this.classList.add('active');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar height
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+          
+          // Update active link
+          navLinks.forEach(navLink => navLink.classList.remove('active'));
+          this.classList.add('active');
+        }
+      }
     });
   });
 
-  function updateActiveLink() {
-    let current = '';
+  // Update active link on scroll
+  window.addEventListener('scroll', () => {
+    let currentSection = '';
     const scrollPosition = window.scrollY + 100;
 
     sections.forEach(section => {
@@ -35,28 +36,24 @@ export function initNavbar() {
       const sectionBottom = sectionTop + section.offsetHeight;
 
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        current = section.getAttribute('id');
+        currentSection = section.getAttribute('id');
       }
     });
 
     navLinks.forEach(link => {
       link.classList.remove('active');
-      const href = link.getAttribute('href').substring(1);
-      if (href === current) {
+      if (link.getAttribute('href') === `#${currentSection}`) {
         link.classList.add('active');
       }
     });
-  }
-
-  window.addEventListener('scroll', updateActiveLink);
-
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
   });
+}
 
-  updateActiveLink();
+// Initialize on page load
+if (typeof window !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavbar);
+  } else {
+    initNavbar();
+  }
 }

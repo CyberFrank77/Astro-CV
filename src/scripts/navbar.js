@@ -3,7 +3,7 @@ export function initNavbar() {
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('[id="education"], [id="experience"], [id="contact"]');
 
-  // Smooth scroll when clicking nav links
+  // loop de los nav links para agregar el evento de click
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -18,7 +18,7 @@ export function initNavbar() {
             behavior: 'smooth'
           });
           
-          // Update active link
+          // selección del nav link activo
           navLinks.forEach(navLink => navLink.classList.remove('active'));
           this.classList.add('active');
         }
@@ -26,7 +26,7 @@ export function initNavbar() {
     });
   });
 
-  // Update active link on scroll
+  // update active navlink y calcular la sección actual al hacer scroll
   window.addEventListener('scroll', () => {
     let currentSection = '';
     const scrollPosition = window.scrollY + 100;
@@ -49,7 +49,7 @@ export function initNavbar() {
   });
 }
 
-// Initialize on page load
+// inciar el navbar cuando el DOM esté listo
 if (typeof window !== 'undefined') {
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initNavbar);

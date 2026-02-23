@@ -6,16 +6,17 @@
   .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 0rem;
   }
 
   .hero {
-    padding: 0rem 0 2rem;
+    
     background: linear-gradient(180deg, #0d1117 0%, #0a0c10 100%);
     border-bottom: 1px solid #30363d;
   }
 
   .hero-content {
+    margin-top: 55px;
     text-align: left;
   }
 
@@ -35,6 +36,7 @@
   }
 
   .hero-meta {
+    margin-bottom: 10px;
     display: flex;
     gap: 2rem;
     color: #848d97;

@@ -33,7 +33,7 @@
   }
 
   .about-text {
-    font-size: rem;
+    margin-top: 20px;
     color: #b0b8c5;
     flex: 1;
   }

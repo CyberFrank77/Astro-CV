@@ -1,3 +1,6 @@
+// creame un observer para las tarjetas de experiencia laboral, 
+// que les añada la clase 'show' cuando estén visibles en el viewport y se la quite cuando no lo estén.
+// intersection observer API para detectar cuando las tarjetas de experiencia laboral están visibles en el viewport
 export function initObserver() {
   if (typeof window !== 'undefined') {
     const observer = new IntersectionObserver((entries) => {
